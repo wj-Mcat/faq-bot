@@ -1,5 +1,5 @@
 """
-Code Generator - https://github.com/wj-Mcat/faq-bot
+faq-bot  https://github.com/wj-Mcat/faq-bot
 
 Authors:    Jingjing WU (吴京京) <https://github.com/wj-Mcat>
 
