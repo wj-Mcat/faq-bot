@@ -20,7 +20,7 @@ clean:
 	rm -fr ./dist .pytype ./build
 
 .PHONY: lint
-lint: pylint pycodestyle flake8 mypy pytype
+lint: pylint pycodestyle flake8 mypy
 
 
 # disable: TODO list temporay
@@ -49,11 +49,6 @@ flake8:
 mypy:
 	MYPYPATH=stubs/ mypy \
 		$(SOURCE_GLOB)
-
-.PHONY: pytype
-pytype:
-	pytype src/ --disable=import-error,pyi-error
-	pytype examples/ --disable=import-error
 
 .PHONY: install
 install:

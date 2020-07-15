@@ -20,16 +20,20 @@ limitations under the License.
 from __future__ import annotations
 
 from typing import Any
-from faq_bot.channel import Channel, ChannelOptions
+from faq_bot.channel import Channel     # type: ignore
 
 
+# pylint: disable=too-few-public-methods
 class Bot:
+    """
+    A bot policy to use different faq channel
+    """
     def __init__(self, channel: Channel):
         """
         initialize the bot to complete the basic faq
         """
         self.channel = channel
-    
+
     async def ask(self, query: str) -> Any:
         """
         the bot feed the query to the channel and get the result
@@ -37,4 +41,3 @@ class Bot:
         """
         answer = await self.channel.ask(query)
         return answer
-        
