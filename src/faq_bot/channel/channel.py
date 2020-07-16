@@ -19,7 +19,7 @@ limitations under the License.
 """
 from __future__ import annotations
 from abc import ABCMeta
-from typing import Union, Any
+from typing import Union, Any, List, Generator, Tuple
 from dataclasses import dataclass
 
 
@@ -39,3 +39,23 @@ class Channel(metaclass=ABCMeta):
         ask the question from channel
         """
         raise NotImplementedError
+
+    @staticmethod
+    def _load_all_questions() -> Generator[Tuple[str, str]]:
+        """load all question sentence"""
+        with open('./data/question.txt', 'r', encoding='utf-8') as f:
+            for line in f:
+                sentence_split = line.split(' ')
+                if len(sentence_split) != 2:
+                    raise Exception('sentence file format is invalid')
+                yield sentence_split[0], sentence_split[1]
+
+    @staticmethod
+    def _load_all_answers() -> Generator[Tuple[str, str]]:
+        """load all answer sentence"""
+        with open('./data/answer.txt', 'r', encoding='utf-8') as f:
+            for line in f:
+                sentence_split = line.split(' ')
+                if len(sentence_split) != 2:
+                    raise Exception('sentence file format is invalid')
+                yield sentence_split[0], sentence_split[1]
