@@ -1,3 +1,5 @@
 httpx
 mkdocs
 mkdocs-material
+azure-cognitiveservices-knowledge-qnamaker
+sentence-transformers
