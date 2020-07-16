@@ -34,7 +34,7 @@ class Channel(metaclass=ABCMeta):
 
     microsoft Qna Maker channel,  tencent sentence similarty restful api
     """
-    async def ask(self, query: Union[str]) -> Any:
+    async def ask_question(self, query: Union[str]) -> Any:
         """
         ask the question from channel
         """
